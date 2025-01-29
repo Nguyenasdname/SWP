@@ -14,7 +14,15 @@
     </servlet>
     <servlet>
         <servlet-name>VerifyNewAccount</servlet-name>
-        <servlet-class>control.VerifyNewAccount</servlet-class>
+        <servlet-class>control.VerifyOTP</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ForgotPassword</servlet-name>
+        <servlet-class>control.ForgotPassword</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ChangeForgotPassword</servlet-name>
+        <servlet-class>control.ChangeForgotPassword</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
@@ -31,6 +39,14 @@
     <servlet-mapping>
         <servlet-name>VerifyNewAccount</servlet-name>
         <url-pattern>/VerifyNewAccount</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ForgotPassword</servlet-name>
+        <url-pattern>/ForgotPassword</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ChangeForgotPassword</servlet-name>
+        <url-pattern>/ChangeForgotPassword</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

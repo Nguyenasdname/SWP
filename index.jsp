@@ -25,6 +25,8 @@
             <br><br>
             <a href="register.jsp">Register</a>
             <br><br>
+            <a href="forgot.jsp">Forgot Password?</a>
+            <br><br>
            
         </form>
     </body>
