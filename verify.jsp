@@ -22,5 +22,9 @@
             <p>${verifyError != null ? verifyError : ''}</p>
             <input type="submit" value="Verify">
         </form>
+        <form action="SendAgainVerifyOTP" method="post">
+            <input type="hidden" name="action" value="<%=request.getParameter("action")%>">
+            <input type="submit" value="Send Code Again!">
+        </form>    
     </body>
 </html>
