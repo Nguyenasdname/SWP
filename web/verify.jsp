@@ -13,9 +13,9 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <form action="VerifyNewAccount" method="post">
-            <input type="hidden" name="action" value="<%=request.getParameter("action")%>">
-            <h1 name="action"><%=request.getParameter("action")%></h1>
+        
+        <form action="VerifyNewAccount?action=${param.action}" method="post">
+            <h1 name="action">${param.action}</h1>
             <%User u = (User) session.getAttribute("user");%>
             <h1><%=u.getUserName()%></h1>
             <input type="text" name="verifyCode">

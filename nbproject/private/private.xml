@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/D:/code/SWP-main/src/java/EmailService/JavaMail.java</file>
+            <file>file:/D:/code/SWP-main/src/java/control/ChangeForgotPassword.java</file>
+            <file>file:/D:/code/SWP-main/web/forgot.jsp</file>
+            <file>file:/D:/code/SWP-main/src/java/dao/imp/UserDaoImp.java</file>
+            <file>file:/D:/code/SWP-main/src/java/EmailService/JavaMailImp.java</file>
+            <file>file:/D:/code/SWP-main/src/java/control/SendAgainVerifyOTP.java</file>
+            <file>file:/D:/code/SWP-main/src/java/test/NewMain.java</file>
+            <file>file:/D:/code/SWP-main/src/java/model/User.java</file>
+            <file>file:/D:/code/SWP-main/src/java/control/Register.java</file>
+            <file>file:/D:/code/SWP-main/web/verify.jsp</file>
+            <file>file:/D:/code/SWP-main/src/java/EmailService/EmailProperty.java</file>
+            <file>file:/D:/code/SWP-main/web/index.jsp</file>
+            <file>file:/D:/code/SWP-main/src/java/control/ForgotPassword.java</file>
+            <file>file:/D:/code/SWP-main/web/check.jsp</file>
+            <file>file:/D:/code/SWP-main/web/home.jsp</file>
+            <file>file:/D:/code/SWP-main/src/java/dao/UserDao.java</file>
+            <file>file:/D:/code/SWP-main/web/done.jsp</file>
+            <file>file:/D:/code/SWP-main/src/java/dao/ConnectionDatabase.java</file>
+            <file>file:/D:/code/SWP-main/web/changePass.jsp</file>
+            <file>file:/D:/code/SWP-main/web/register.jsp</file>
+            <file>file:/D:/code/SWP-main/src/java/control/Logout.java</file>
+            <file>file:/D:/code/SWP-main/src/java/dao/ConnectionProperty.java</file>
+            <file>file:/D:/code/SWP-main/src/java/control/Login.java</file>
+            <file>file:/D:/code/SWP-main/src/java/control/VerifyOTP.java</file>
+            <file>file:/D:/code/SWP-main/web/WEB-INF/web.xml</file>
+        </group>
+    </open-files>
+</project-private>
