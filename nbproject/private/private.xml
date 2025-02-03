@@ -6,6 +6,7 @@
             <file>file:/D:/code/SWP-main/src/java/EmailService/JavaMail.java</file>
             <file>file:/D:/code/SWP-main/src/java/control/ChangeForgotPassword.java</file>
             <file>file:/D:/code/SWP-main/web/forgot.jsp</file>
+            <file>file:/D:/code/SWP-main/web/editProfile.jsp</file>
             <file>file:/D:/code/SWP-main/src/java/dao/imp/UserDaoImp.java</file>
             <file>file:/D:/code/SWP-main/src/java/EmailService/JavaMailImp.java</file>
             <file>file:/D:/code/SWP-main/src/java/control/SendAgainVerifyOTP.java</file>
@@ -15,6 +16,10 @@
             <file>file:/D:/code/SWP-main/web/verify.jsp</file>
             <file>file:/D:/code/SWP-main/src/java/EmailService/EmailProperty.java</file>
             <file>file:/D:/code/SWP-main/web/index.jsp</file>
+            <file>file:/D:/code/SWP-main/web/Images/admin1_profile_img.png</file>
+            <file>file:/D:/code/SWP-main/src/java/ImageControl/UploadImage.java</file>
+            <file>file:/D:/code/SWP-main/web/profile.jsp</file>
+            <file>file:/D:/code/SWP-main/src/java/control/EditProfile.java</file>
             <file>file:/D:/code/SWP-main/src/java/control/ForgotPassword.java</file>
             <file>file:/D:/code/SWP-main/web/check.jsp</file>
             <file>file:/D:/code/SWP-main/web/home.jsp</file>
@@ -26,6 +31,7 @@
             <file>file:/D:/code/SWP-main/src/java/control/Logout.java</file>
             <file>file:/D:/code/SWP-main/src/java/dao/ConnectionProperty.java</file>
             <file>file:/D:/code/SWP-main/src/java/control/Login.java</file>
+            <file>file:/D:/code/SWP-main/web/Images/WIN_20240322_20_24_12_Pro.jpg</file>
             <file>file:/D:/code/SWP-main/src/java/control/VerifyOTP.java</file>
             <file>file:/D:/code/SWP-main/web/WEB-INF/web.xml</file>
         </group>

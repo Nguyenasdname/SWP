@@ -14,11 +14,14 @@
     <body>
         <h1>Hello World!</h1>
         
-        <form action="UploadImage" method="post" enctype="multipart/form-data">
+        <form action="EditProfile" method="post" enctype="multipart/form-data">
+            <p>User Address: </p><input type="text" value="${user.userAddress}" name="userAddress">
             
-            <input type="file" name="image">
+            <p>Phone Number: </p><input type="text" value="${user.phoneNumber}" name="phoneNumber">
             
-            <br><!-- comment -->
+            <p>Profile Avatar: </p><input type="file" name="image">
+            
+            <br>
             
             <input type="submit" value="Confirm">
             

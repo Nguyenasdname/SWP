@@ -20,10 +20,13 @@
         %>
         <h1>Hello World!</h1>
         <form>
-            
-            <input type="text" value="${user.userIMG}">
+            <p>User Name: ${user.userName}</p>
+            <p>User Address ${user.userAddress}</p>
+            <p>User Phone Number ${user.phoneNumber}</p>
+            <input type="text" value="${user.userIMG}" readonly>
             <br>
-            <img src="" >
+            <img src="${user.userIMG}" >
+            <a href="editProfile.jsp">Edit Profile</a>
         </form>
     </body>
 </html>

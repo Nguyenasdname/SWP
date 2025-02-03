@@ -32,6 +32,10 @@
         <servlet-name>UploadImage</servlet-name>
         <servlet-class>ImageControl.UploadImage</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EditProfile</servlet-name>
+        <servlet-class>control.EditProfile</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -63,6 +67,10 @@
     <servlet-mapping>
         <servlet-name>UploadImage</servlet-name>
         <url-pattern>/UploadImage</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditProfile</servlet-name>
+        <url-pattern>/EditProfile</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
