@@ -110,7 +110,7 @@ public class VerifyOTP extends HttpServlet {
                 }
                 break;
             default:
-
+                response.getWriter().println("Fail!");
                 break;
         }
 

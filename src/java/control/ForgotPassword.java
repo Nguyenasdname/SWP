@@ -4,8 +4,8 @@
  */
 package control;
 
-import EmailService.JavaMail;
-import EmailService.JavaMailImp;
+import emailService.JavaMail;
+import emailService.JavaMailImp;
 import dao.UserDao;
 import dao.imp.UserDaoImp;
 import java.io.IOException;

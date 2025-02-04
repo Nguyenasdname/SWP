@@ -38,8 +38,8 @@ public class UserDaoImp implements UserDao {
 
     @Override
     public boolean addUser(User user) {
-        String sql = "Insert into Users(UserName, UserPass, UserAddress, UserEmail, UserStatus, RoleID, PhoneNumber)\n"
-                + "values (?,?,?,?,?,?,?)";
+        String sql = "Insert into Users(UserName, UserPass, UserEmail, UserAddress, UserStatus, UserIMG, RoleID, PhoneNumber)\n"
+                + "values (?,?,?,?,?,?,?,?)";
         try (
                 Connection con = ConnectionDatabase.getConnection(); PreparedStatement preStatement = con.prepareStatement(sql);) {
 
@@ -107,12 +107,13 @@ public class UserDaoImp implements UserDao {
     @Override
     public User validateUser(String userName, String userPass) {
         User u = null;
-        String sql = "Select *from Users Where UserName = ? and UserPass = ?";
+        String sql = "SELECT * FROM Users WHERE (UserName = ? OR UserEmail = ?) AND UserPass = ?";
         try (
                 Connection con = ConnectionDatabase.getConnection(); PreparedStatement preStatement = con.prepareStatement(sql);) {
 
             preStatement.setString(1, userName);
-            preStatement.setString(2, userPass);
+            preStatement.setString(2, userName);
+            preStatement.setString(3, userPass);
 
             try (ResultSet resultSet = preStatement.executeQuery()) {
                 if (resultSet.next()) {

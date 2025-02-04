@@ -4,8 +4,8 @@
  */
 package control;
 
-import EmailService.JavaMail;
-import EmailService.JavaMailImp;
+import emailService.JavaMail;
+import emailService.JavaMailImp;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;

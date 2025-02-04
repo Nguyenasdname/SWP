@@ -30,11 +30,15 @@
     </servlet>
     <servlet>
         <servlet-name>UploadImage</servlet-name>
-        <servlet-class>ImageControl.UploadImage</servlet-class>
+        <servlet-class>imageControl.UploadImage</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>EditProfile</servlet-name>
         <servlet-class>control.EditProfile</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoginViaGoogle</servlet-name>
+        <servlet-class>googleHandle.LoginViaGoogle</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
@@ -71,6 +75,10 @@
     <servlet-mapping>
         <servlet-name>EditProfile</servlet-name>
         <url-pattern>/EditProfile</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginViaGoogle</servlet-name>
+        <url-pattern>/LoginViaGoogle</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

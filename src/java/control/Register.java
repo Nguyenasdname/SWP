@@ -4,8 +4,8 @@
  */
 package control;
 
-import EmailService.JavaMail;
-import EmailService.JavaMailImp;
+import emailService.JavaMail;
+import emailService.JavaMailImp;
 import dao.UserDao;
 import dao.imp.UserDaoImp;
 import java.io.IOException;
@@ -83,46 +83,94 @@ public class Register extends HttpServlet {
         String userAddress = request.getParameter("userAddress");
         String userEmail = request.getParameter("userEmail").toLowerCase();
         String phoneNumber = request.getParameter("phoneNumber");
+        String action = request.getParameter("action");
 
         JavaMail jvm = new JavaMailImp();
 
         UserDao userDao = new UserDaoImp();
 
-        if (!userPass.equals(confirmPass)) {
-            request.setAttribute("confirmPassError", "Not Correct Password!");
-            request.setAttribute("thisUserName", userName);
-            request.setAttribute("thisUserAddress", userAddress);
-            request.setAttribute("thisUserEmail", userEmail);
-            request.setAttribute("thisPhoneNumber", phoneNumber);
+        User checkUser = null;
 
-            request.getRequestDispatcher("register.jsp").forward(request, response);
-        }
+        User newUser = null;
 
-        User checkUser = userDao.isUserExists(userName, userEmail);
+        switch (action) {
+            case "register":
+                if (!userPass.equals(confirmPass)) {
+                    request.setAttribute("confirmPassError", "Not Correct Password!");
+                    request.setAttribute("thisUserName", userName);
+                    request.setAttribute("thisUserAddress", userAddress);
+                    request.setAttribute("thisUserEmail", userEmail);
+                    request.setAttribute("thisPhoneNumber", phoneNumber);
 
-        if (checkUser != null) {
-            if (userName.equals(checkUser.getUserName())) {
-                request.setAttribute("userNameError", "Already have this username, please choose another!");
-            } else if (userEmail.equals(checkUser.getUserEmail())) {
-                request.setAttribute("userEmailError", "Already have this email, please choose another!");
-            }
-            request.setAttribute("thisUserName", userName);
-            request.setAttribute("thisUserAddress", userAddress);
-            request.setAttribute("thisUserEmail", userEmail);
-            request.setAttribute("thisPhoneNumber", phoneNumber);
-            request.getRequestDispatcher("register.jsp").forward(request, response);
-        }
+                    request.getRequestDispatcher("register.jsp").forward(request, response);
+                }
 
-        User newUser = new User(1, userName, userPass, userEmail, userAddress, 1, null, 2, phoneNumber);
+                checkUser = userDao.isUserExists(userName, userEmail);
 
-        newUser.setUserCode(jvm.generatedOTP());
+                if (checkUser != null) {
+                    if (userName.equals(checkUser.getUserName())) {
+                        request.setAttribute("userNameError", "Already have this username, please choose another!");
+                    } else if (userEmail.equals(checkUser.getUserEmail())) {
+                        request.setAttribute("userEmailError", "Already have this email, please choose another!");
+                    }
+                    request.setAttribute("thisUserName", userName);
+                    request.setAttribute("thisUserAddress", userAddress);
+                    request.setAttribute("thisUserEmail", userEmail);
+                    request.setAttribute("thisPhoneNumber", phoneNumber);
+                    request.setAttribute("triggerClick", true);
+                    request.getRequestDispatcher("index.jsp").forward(request, response);
+                } else {
+                    newUser = new User(1, userName, userPass, userEmail, userAddress, 1, null, 2, phoneNumber);
 
-        boolean sendMail = jvm.send(userEmail, "Verify YourEmail", newUser.getUserCode(), "Verify_OTP", newUser);
+                    newUser.setUserCode(jvm.generatedOTP());
 
-        if (sendMail) {
-            HttpSession session = request.getSession();
-            session.setAttribute("user", newUser);
-            response.sendRedirect("verify.jsp?action=register");
+                    boolean sendMail = jvm.send(userEmail, "Verify YourEmail", newUser.getUserCode(), "Verify_OTP", newUser);
+
+                    if (sendMail) {
+                        HttpSession session = request.getSession();
+                        session.setAttribute("user", newUser);
+                        response.sendRedirect("verify.jsp?action=register");
+                    }
+                }
+
+                break;
+
+            case "registerViaGoogle":
+                if (!userPass.equals(confirmPass)) {
+                    request.setAttribute("confirmPassError", "Not Correct Password!");
+                    request.setAttribute("thisUserName", userName);
+                    request.setAttribute("thisUserAddress", userAddress);
+                    request.setAttribute("thisUserEmail", userEmail);
+                    request.setAttribute("thisPhoneNumber", phoneNumber);
+
+                    request.getRequestDispatcher("registerViaGoogle.jsp").forward(request, response);
+                }
+                checkUser = userDao.isUserExists(userName, null);
+                if (checkUser != null) {
+                    if (userName.equals(checkUser.getUserName())) {
+                        request.setAttribute("userNameError", "Already have this username, please choose another!");
+                    }
+                    request.setAttribute("thisUserName", userName);
+                    request.setAttribute("thisUserAddress", userAddress);
+                    request.setAttribute("thisUserEmail", userEmail);
+                    request.setAttribute("thisPhoneNumber", phoneNumber);
+                    request.setAttribute("triggerClick", true);
+                    request.getRequestDispatcher("registerViaGoogle.jsp").forward(request, response);
+                } else {
+                    newUser = new User(1, userName, userPass, userEmail, userAddress, 1, null, 2, phoneNumber);
+
+                    boolean addUser = userDao.addUser(newUser);
+
+                    if (addUser) {
+                        HttpSession session = request.getSession();
+                        session.setAttribute("user", newUser);
+                        response.sendRedirect("home.jsp");
+                    }
+                }
+
+                break;
+            default:
+                break;
         }
 
     }
