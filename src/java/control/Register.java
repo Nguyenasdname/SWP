@@ -101,35 +101,36 @@ public class Register extends HttpServlet {
                     request.setAttribute("thisUserAddress", userAddress);
                     request.setAttribute("thisUserEmail", userEmail);
                     request.setAttribute("thisPhoneNumber", phoneNumber);
-
-                    request.getRequestDispatcher("register.jsp").forward(request, response);
-                }
-
-                checkUser = userDao.isUserExists(userName, userEmail);
-
-                if (checkUser != null) {
-                    if (userName.equals(checkUser.getUserName())) {
-                        request.setAttribute("userNameError", "Already have this username, please choose another!");
-                    } else if (userEmail.equals(checkUser.getUserEmail())) {
-                        request.setAttribute("userEmailError", "Already have this email, please choose another!");
-                    }
-                    request.setAttribute("thisUserName", userName);
-                    request.setAttribute("thisUserAddress", userAddress);
-                    request.setAttribute("thisUserEmail", userEmail);
-                    request.setAttribute("thisPhoneNumber", phoneNumber);
                     request.setAttribute("triggerClick", true);
+                    
                     request.getRequestDispatcher("index.jsp").forward(request, response);
                 } else {
-                    newUser = new User(1, userName, userPass, userEmail, userAddress, 1, null, 2, phoneNumber);
+                    checkUser = userDao.isUserExists(userName, userEmail);
 
-                    newUser.setUserCode(jvm.generatedOTP());
+                    if (checkUser != null) {
+                        if (userName.equals(checkUser.getUserName())) {
+                            request.setAttribute("userNameError", "Already have this username, please choose another!");
+                        } else if (userEmail.equals(checkUser.getUserEmail())) {
+                            request.setAttribute("userEmailError", "Already have this email, please choose another!");
+                        }
+                        request.setAttribute("thisUserName", userName);
+                        request.setAttribute("thisUserAddress", userAddress);
+                        request.setAttribute("thisUserEmail", userEmail);
+                        request.setAttribute("thisPhoneNumber", phoneNumber);
+                        request.setAttribute("triggerClick", true);
+                        request.getRequestDispatcher("index.jsp").forward(request, response);
+                    } else {
+                        newUser = new User(1, userName, userPass, userEmail, userAddress, 1, null, 2, phoneNumber);
 
-                    boolean sendMail = jvm.send(userEmail, "Verify YourEmail", newUser.getUserCode(), "Verify_OTP", newUser);
+                        newUser.setUserCode(jvm.generatedOTP());
 
-                    if (sendMail) {
-                        HttpSession session = request.getSession();
-                        session.setAttribute("user", newUser);
-                        response.sendRedirect("verify.jsp?action=register");
+                        boolean sendMail = jvm.send(userEmail, "Verify YourEmail", newUser.getUserCode(), "Verify_OTP", newUser);
+
+                        if (sendMail) {
+                            HttpSession session = request.getSession();
+                            session.setAttribute("user", newUser);
+                            response.sendRedirect("verify.jsp?action=register");
+                        }
                     }
                 }
 
@@ -144,27 +145,28 @@ public class Register extends HttpServlet {
                     request.setAttribute("thisPhoneNumber", phoneNumber);
 
                     request.getRequestDispatcher("registerViaGoogle.jsp").forward(request, response);
-                }
-                checkUser = userDao.isUserExists(userName, null);
-                if (checkUser != null) {
-                    if (userName.equals(checkUser.getUserName())) {
-                        request.setAttribute("userNameError", "Already have this username, please choose another!");
-                    }
-                    request.setAttribute("thisUserName", userName);
-                    request.setAttribute("thisUserAddress", userAddress);
-                    request.setAttribute("thisUserEmail", userEmail);
-                    request.setAttribute("thisPhoneNumber", phoneNumber);
-                    request.setAttribute("triggerClick", true);
-                    request.getRequestDispatcher("registerViaGoogle.jsp").forward(request, response);
                 } else {
-                    newUser = new User(1, userName, userPass, userEmail, userAddress, 1, null, 2, phoneNumber);
+                    checkUser = userDao.isUserExists(userName, null);
+                    if (checkUser != null) {
+                        if (userName.equals(checkUser.getUserName())) {
+                            request.setAttribute("userNameError", "Already have this username, please choose another!");
+                        }
+                        request.setAttribute("thisUserName", userName);
+                        request.setAttribute("thisUserAddress", userAddress);
+                        request.setAttribute("thisUserEmail", userEmail);
+                        request.setAttribute("thisPhoneNumber", phoneNumber);
+                        request.setAttribute("triggerClick", true);
+                        request.getRequestDispatcher("registerViaGoogle.jsp").forward(request, response);
+                    } else {
+                        newUser = new User(1, userName, userPass, userEmail, userAddress, 1, null, 2, phoneNumber);
 
-                    boolean addUser = userDao.addUser(newUser);
+                        boolean addUser = userDao.addUser(newUser);
 
-                    if (addUser) {
-                        HttpSession session = request.getSession();
-                        session.setAttribute("user", newUser);
-                        response.sendRedirect("home.jsp");
+                        if (addUser) {
+                            HttpSession session = request.getSession();
+                            session.setAttribute("user", newUser);
+                            response.sendRedirect("home.jsp");
+                        }
                     }
                 }
 

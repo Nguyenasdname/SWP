@@ -16,6 +16,7 @@
             <file>file:/D:/code/SWP-main/src/java/model/User.java</file>
             <file>file:/D:/code/SWP-main/src/java/control/Register.java</file>
             <file>file:/D:/code/SWP-main/web/verify.jsp</file>
+            <file>file:/D:/code/SWP-main/web/css/verify.css</file>
             <file>file:/D:/code/SWP-main/web/Images/admin1_profile_img.png</file>
             <file>file:/D:/code/SWP-main/web/index.jsp</file>
             <file>file:/D:/code/SWP-main/src/java/emailService/EmailProperty.java</file>
@@ -37,8 +38,8 @@
             <file>file:/D:/code/SWP-main/src/java/dao/ConnectionProperty.java</file>
             <file>file:/D:/code/SWP-main/src/java/control/Login.java</file>
             <file>file:/D:/code/SWP-main/web/Images/WIN_20240322_20_24_12_Pro.jpg</file>
-            <file>file:/D:/code/SWP-main/web/js/index.js</file>
             <file>file:/D:/code/SWP-main/web/css/index.css</file>
+            <file>file:/D:/code/SWP-main/web/js/index.js</file>
             <file>file:/D:/code/SWP-main/src/java/control/VerifyOTP.java</file>
             <file>file:/D:/code/SWP-main/web/WEB-INF/web.xml</file>
         </group>

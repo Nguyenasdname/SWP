@@ -1,0 +1,110 @@
+/* Căn giữa form */
+body{
+    background: linear-gradient(135deg, #4a90e2, #4070f4);
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #4a90e2, #4070f4);
+}
+
+/* Thiết kế form */
+.form.verify {
+    max-width: 450px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Hiệu ứng mờ dần khi xuất hiện */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Tiêu đề */
+header {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Nội dung */
+p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Ô nhập OTP */
+.input {
+    width: 60%;
+    max-width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #4a90e2;
+    border-radius: 6px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.input:focus {
+    border-color: #204f91;
+    outline: none;
+    box-shadow: 0 0 10px rgba(74, 144, 226, 0.5);
+}
+
+/* Nút Verify */
+#verify-btn {
+    width: 25%;
+    max-width: 300px;
+    background-color: #007bff;
+    color: white;
+    padding: 8px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+#verify-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Link Resend OTP */
+#resend-btn {
+    display: block;
+    margin-top: 15px;
+    color: #204f91;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#resend-btn:hover {
+    color: #4a90e2;
+    text-decoration: underline;
+}
+
+/* Hiển thị lỗi */
+.error-message {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 5px;
+    color: red;
+    text-align: center;
+    display: none; /* Mặc định ẩn */
+}
+
+/* Chỉ hiển thị lỗi nếu input bị rời đi (blur) và không đủ 6 số */
+input:invalid:focus + .error-message,
+input:not(:placeholder-shown):invalid + .error-message {
+    display: block;
+}

@@ -8,6 +8,9 @@
     font-family: 'Poppins', sans-serif;
 }
 
+body{
+    background-color: rgb(64, 112, 244);
+}
 .container {
     height: 100vh;
     width: 100%;
@@ -16,6 +19,7 @@
     justify-content: center;
     background-color: #4070f4;
     column-gap: 30px;
+    background-color: rgb(64, 112, 244);
 }
 
 .form {
@@ -185,6 +189,11 @@ a.google span {
     margin-left: 30px;
 }
 
+.form-signup{
+    margin-top: 30px;
+    margin-bottom: 30px;   
+}
+
 /* Responsive Styles */
 @media screen and (max-width: 400px) {
     .form {
@@ -203,4 +212,8 @@ a.google span {
     .line::before {
         padding: 0 10px;
     }
+}
+
+form-signup{
+    margin: 30;
 }

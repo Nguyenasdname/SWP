@@ -22,15 +22,17 @@ public class NewMain {
         
         User u = userDao.isUserExists("Admin1", "asd");
         
+        System.out.print(u);
+        
         User uNew = new User(3, "login", "123", "@gmail.com", "32 LeVANZ", 1, null, 2, "0903210843");
         
-        boolean add = userDao.addUser(uNew);
-        if(add){
-            System.out.print("Oke");
-        } else {
-            System.out.print("Hell Nal");
-         
-        }
+//        boolean add = userDao.addUser(uNew);
+//        if(add){
+//            System.out.print("Oke");
+//        } else {
+//            System.out.print("Hell Nal");
+//         
+//        }
     }
     
 }

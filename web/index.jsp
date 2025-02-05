@@ -29,9 +29,9 @@
                     <header>Login</header>
                     <form action="login" method="post">
                         <div class="field input-field">
-                            <input type="text" placeholder="Username or Email" class="input" name="userName" required>
+                            <input type="text" placeholder="Username or Email" class="input" name="userName" value="${param.userName}" required>
                         </div>
-
+                        <div style="color: red; margin-top: 10px">${errorMess != null ? errorMess : ''}</div>
                         <div class="field input-field">
                             <input type="password" placeholder="Password" class="password" name="userPass" required>
                             <i class='bx bx-hide eye-icon'></i>
@@ -62,27 +62,27 @@
             </div>
 
             <!-- Signup Form -->
-            <div class="form signup">
+            <div class="form signup form-signup">
                 <div class="form-content">
                     <header>Signup</header>
                     <form action="register?action=register" method="post">
                         <div class="field input-field">
                             <input type="text" placeholder="User Name" class="username" name="userName" value="${param.userName}" required>
                         </div>
-
+                        <div style="color: red; margin-top: 10px">${userNameError != null ? userNameError : ''}</div>
                         <div class="field input-field">
                             <input type="email" placeholder="Email" class="input" name="userEmail" value="${param.userEmail}" required>
                         </div>
-
+                        <div style="color: red; margin-top: 10px">${userEmailError != null ? userEmailError : ''}</div>
                         <div class="field input-field">
                             <input type="password" placeholder="Create password" class="password" name="userPass"  required>
                         </div>
-
+                        
                         <div class="field input-field">
                             <input type="password" placeholder="Confirm password" class="password" name="confirmPass" required>
                             <i class='bx bx-hide eye-icon'></i>
                         </div>
-
+                        <div style="color: red; margin-top: 10px">${confirmPassError != null ? confirmPassError : ''}</div>
                         <div class="field">
                             <input type="text" placeholder="Address" class="userAddress" name="userAddress" value="${param.userAddress}" required>
                         </div>

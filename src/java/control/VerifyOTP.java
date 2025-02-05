@@ -89,6 +89,9 @@ public class VerifyOTP extends HttpServlet {
                     if (addUser) {
                         response.sendRedirect("home.jsp");
 
+                    } else {
+                        request.setAttribute("verifyError", "Failed to register. Please try again.");
+                        request.getRequestDispatcher("verify.jsp").forward(request, response);
                     }
 
                 } else {
@@ -97,11 +100,12 @@ public class VerifyOTP extends HttpServlet {
                     request.getRequestDispatcher("verify.jsp").forward(request, response);
                 }
                 break;
-                
+
             case "forgotPassword":
                 if (verifyCode.equals(newUser.getUserCode())) {
 
-                    request.getRequestDispatcher("changePass.jsp").forward(request, response);
+                    request.getRequestDispatcher("resetPass.jsp").forward(request, response);
+                    
 
                 } else {
 

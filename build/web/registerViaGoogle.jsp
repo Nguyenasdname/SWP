@@ -25,39 +25,16 @@
         <section class="container forms">
             <div class="form login">
                 <div class="form-content">
-                    <header>Login</header>
-                    <form action="login" method="post">
-                        <div class="field input-field">
-                            <input type="text" placeholder="Username or Email" class="input" name="userName" required>
-                        </div>
-
-                        <div class="field input-field">
-                            <input type="password" placeholder="Password" class="password" name="userPass" required>
-                            <i class='bx bx-hide eye-icon'></i>
-                        </div>
-
-                        <div class="form-link">
-                            <a href="forgot.jsp" class="forgot-pass">Forgot password?</a>
-                        </div>
-
-                        <div class="field button-field">
-                            <button type="submit">Login</button>
-                        </div>
-                    </form>
+                   
 
                     <div class="form-link">
                         <span>Don't have an account? <a id="register" href="" class="link signup-link">Signup</a></span>
                     </div>
                 </div>
 
-                <div class="line"></div>
+                
 
-                <div class="media-options">
-                    <a href="https://accounts.google.com/o/oauth2/auth?scope=email profile openid&redirect_uri=http://localhost:8080/TestProject2/LoginViaGoogle&response_type=code&client_id=908329241718-ltvff88i377f17l95qhrhouu812uuqg2.apps.googleusercontent.com&approval_prompt=force" class="field google">
-                        <img src="images/google.png" alt="google icon" class="google-img">
-                        <span>Login with Google</span>
-                    </a>
-                </div>
+          
             </div>
 
             <!-- Signup Form -->
@@ -95,12 +72,10 @@
                         </div>
                     </form>
 
-                    <div class="form-link">
-                        <span>Already have an account? <a href="#" class="link login-link">Login</a></span>
-                    </div>
+                    
                 </div>
 
-                <div class="line"></div>
+                
 
                 
             </div>

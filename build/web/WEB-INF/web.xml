@@ -13,10 +13,6 @@
         <servlet-class>control.Register</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>VerifyNewAccount</servlet-name>
-        <servlet-class>control.VerifyOTP</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>ForgotPassword</servlet-name>
         <servlet-class>control.ForgotPassword</servlet-class>
     </servlet>
@@ -40,6 +36,10 @@
         <servlet-name>LoginViaGoogle</servlet-name>
         <servlet-class>googleHandle.LoginViaGoogle</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>VerifyOTP</servlet-name>
+        <servlet-class>control.VerifyOTP</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -51,10 +51,6 @@
     <servlet-mapping>
         <servlet-name>Register</servlet-name>
         <url-pattern>/Register</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>VerifyNewAccount</servlet-name>
-        <url-pattern>/VerifyNewAccount</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ForgotPassword</servlet-name>
@@ -79,6 +75,10 @@
     <servlet-mapping>
         <servlet-name>LoginViaGoogle</servlet-name>
         <url-pattern>/LoginViaGoogle</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>VerifyOTP</servlet-name>
+        <url-pattern>/VerifyOTP</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

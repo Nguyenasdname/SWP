@@ -91,12 +91,12 @@ public class ChangeForgotPassword extends HttpServlet {
                 response.sendRedirect("index.jsp");
             } else {
                 request.setAttribute("confirmPassError", "Cannot Change Your Password");
-                request.getRequestDispatcher("changePass.jsp").forward(request, response);
+                request.getRequestDispatcher("resetPass.jsp").forward(request, response);
             }
 
         } else {
             request.setAttribute("confirmPassError", "Not Correct Password!");
-            request.getRequestDispatcher("changePass.jsp").forward(request, response);
+            request.getRequestDispatcher("resetPass.jsp").forward(request, response);
         }
     }
 
